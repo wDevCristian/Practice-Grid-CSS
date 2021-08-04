@@ -1,4 +1,99 @@
 body{
-   background-color: black;
-   color: white;
+   margin: 0;
+   padding: 0;
+   box-sizing: 0;
+   font-family: "Quicksand", sans-serif;
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 25px;
+}
+
+.container{
+   height: 100vh;
+   display: grid;
+   grid-template-columns: 3fr 1fr;
+   grid-template-rows: minmax(10%, 20%) repeat(2, 1fr) minmax(15%, 20%);
+   gap: 5px;
+   grid-template-areas: 
+   "header header"
+   "content1 content2"
+   "content1 content3"
+   "footer footer"
+}
+
+header{
+   grid-area: header;
+}
+
+.content, 
+header, 
+footer{
+   border: solid 2px #222;
+   border-radius: 5px;
+}
+
+footer{
+   grid-area: footer;
+}
+
+.content1{
+   grid-area: content1;
+}
+
+.content2{
+   grid-area: content2;
+}
+
+.content3{
+   grid-area: content3;
+}
+
+
+.chess__table{
+   height: 100vh;
+   display: grid;
+   grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+   grid-template-areas: 
+   "sq1 . . ."
+   ". sq2 . ."
+   ". . sq3 ."
+   ". . . sq4";
+   gap: 3px;
+   /* grid-auto-rows */
+}
+
+.square{
+   border: solid 2px #222;
+   border-radius: 5px;
+}
+
+.square1{
+   grid-area: sq1;
+}
+
+
+.square2{
+   grid-area: sq2;
+}
+
+
+.square3{
+   grid-area: sq3;
+}
+
+
+.square4{
+   grid-area: sq4;
+}
+/* Media queries */
+
+@media (max-width: 480px){
+   .container{
+      grid-template-areas: 
+      "header header"
+      "content1 content1"
+      "content2 content2"
+      "content3 content3"
+      "footer footer";
+   }
 }
